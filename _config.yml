@@ -34,7 +34,7 @@ show_aboutme_card: true
 # about_me_title: The will be displayed as the title in the About Me section
 about_me_title: About Me
 # about_me_description: This will be displayed under the title.
-about_me_description: I am Amoghavarsha, I am a freelance web developer, and an independent security researcher, automobile engineer by degree and programmer by passion.
+about_me_description: Hey there, I am Amoghavarsha. I am a freelance web developer, and an independent security researcher. An Automobile engineer by degree and a programmer by passion.
 
 # SKILLS SECTION
 # show_skills_card:
@@ -53,7 +53,7 @@ show_timeline_card: true
 timeline_title: Education & Experience
 # cv_download_link: The link where you host your cv.
 # > e.g. you share your cv on your dropbox, then add the dropbox link here
-cv_download_link: 
+#cv_download_link: 
 
 # PROJECTS SECTION
 # show_projects_card:
@@ -71,7 +71,7 @@ projects_title: Projects
 # > setting this to false, will omit your public projects on github
 show_os_projects: true
 # os_projects_title: The will be displayed as the title of your open source projects
-os_projects_title: Open Source Projects
+#os_projects_title: Open Source Projects
 
 # CONTACT SECTION
 # show_contact_card:
@@ -81,7 +81,7 @@ show_contact_card: true
 # contact_title: The will be displayed as the title in the Contact section
 contact_title: Contact
 # contact_description: This will be displayed under the title.
-contact_description: 
+contact_description: Hit me up on
 
 # GITHUB-METADATA
 # Set this to your forked repository
