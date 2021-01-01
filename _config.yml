@@ -7,7 +7,7 @@ title: Neumorphism
 description: Personal website powered by Jekyll
 # baseurl: The subpath of your site
 # > set this to "", if you renamed the repository to <user>.github.io
-baseurl: "/neumorphism"
+baseurl: ""
 
 # LANDING PAGE
 # username: This will displayed on the landing page as your name.
@@ -110,7 +110,7 @@ projects:
 # Set the id, if you want to track your website with Google Analytics
 # > set this to "", if you do not want to track with Google Analytics
 google-analytics:
-  id: "UA-158757509-2"
+  id: ""
 
 ### END OF VALUES YOU SHOULD CHANGE ###
 
