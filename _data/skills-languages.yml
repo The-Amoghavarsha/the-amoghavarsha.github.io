@@ -4,10 +4,6 @@
 # Example of a Language
 # - name: Language
 #   weight: 5
-
-- name: TypeScript
-  weight: 5
-
 - name: JavaScript
   weight: 4
 
