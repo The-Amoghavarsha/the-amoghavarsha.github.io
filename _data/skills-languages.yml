@@ -34,5 +34,5 @@
 - name: C++
   weight: 2
 
-- name: Ruby
-  weight: 2
+#- name: Ruby
+ # weight: 2
