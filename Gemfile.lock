@@ -10,6 +10,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     coffee-script (2.4.1)
+    gem "nokogiri", ">= 1.11.0"
       coffee-script-source
       execjs
     coffee-script-source (1.11.1)
