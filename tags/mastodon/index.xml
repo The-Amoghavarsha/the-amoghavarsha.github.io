@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mastodon on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/mastodon/</link>
+    <description>Recent content in mastodon on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Oct 2023 22:18:23 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/mastodon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastodon Verification</title>
+      <link>https://amoghavarsha.in/blogs/mastodon-verification/</link>
+      <pubDate>Tue, 10 Oct 2023 22:18:23 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/mastodon-verification/</guid>
+      <description>Mastodon is a Twitter-like micro-blogging platform. There are a lot of tweaks that you can make on Masto, as it&amp;rsquo;s free and open-source software. It provides you with a way to verify your websites on the platform in an indie web-style way.
+What Does It Mean? Imagine you have a personal blog or a website, obviously hosted on the web. So it is your online identity.
+Now, let&amp;rsquo;s say, you also have other social media, and generally you would like to provide a link to your personal website or blog in the bio/description.</description>
+    </item>
+    
+  </channel>
+</rss>

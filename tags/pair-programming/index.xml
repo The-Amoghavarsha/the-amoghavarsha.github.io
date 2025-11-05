@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pair programming on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/pair-programming/</link>
+    <description>Recent content in pair programming on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Sep 2023 02:13:56 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/pair-programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pair Programming With Tmux</title>
+      <link>https://amoghavarsha.in/blogs/pair-programming-with-tmux/</link>
+      <pubDate>Sun, 10 Sep 2023 02:13:56 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/pair-programming-with-tmux/</guid>
+      <description>Have you ever wondered how you can do pair programming with your friends using some simple tools?
+To achieve this, you only need two things: ssh and tmux.
+I&amp;rsquo;ve already explained about ssh in my other articles, you can go and check them out to get some basic understanding.
+If you haven&amp;rsquo;t installed tmux, you can do so by typing the following command (Works for Debian based systems):
+sudo apt install tmux On the remote server, start a new tmux session.</description>
+    </item>
+    
+  </channel>
+</rss>

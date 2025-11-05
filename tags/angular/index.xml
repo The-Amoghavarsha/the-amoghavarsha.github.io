@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angular on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/angular/</link>
+    <description>Recent content in Angular on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 23:09:15 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ng Problem</title>
+      <link>https://amoghavarsha.in/blogs/ng-problem/</link>
+      <pubDate>Mon, 01 Jan 2024 23:09:15 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/ng-problem/</guid>
+      <description>Plot A few days ago, I was trying to set up an angular project. The goal was simple, that was to install angular-cli with npm or yarn. Easy-peasy.
+But, the bad omen struck. Angular is a careful, robust, feature-rich framework. When I say careful, it&amp;rsquo;s very specific in many ways. The command was simple: npm install -g @angular/cli. Wanted to install angular globally, super simple, nothing crazy. Typically, it was supposed to be installed, but didn&amp;rsquo;t!</description>
+    </item>
+    
+  </channel>
+</rss>

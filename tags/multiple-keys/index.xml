@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>multiple keys on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/multiple-keys/</link>
+    <description>Recent content in multiple keys on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Sep 2023 11:21:23 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/multiple-keys/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Manage Multiple SSH Keys</title>
+      <link>https://amoghavarsha.in/blogs/multiple-ssh-keys/</link>
+      <pubDate>Tue, 12 Sep 2023 11:21:23 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/multiple-ssh-keys/</guid>
+      <description>In the previous article you learnt how to connect between two Linux machines, in this tutorial, you are going to learn how to manage more than one ssh keypair effectively.
+In your .ssh directory, create a file called config. Inside the config add the following lines:
+Host Cat HostName cat.com User amoghavarsha IdentityFile ~/.ssh/id_rsa IdentitiesOnly yes Host Dog HostName dog.com User amoghavarsha IdentityFile ~/.ssh/id_rsa.1 IdentitiesOnly yes Host * AddKeysToAgent yes IdentityFile ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

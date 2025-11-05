@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/ssh/</link>
+    <description>Recent content in ssh on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Sep 2023 11:21:23 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Manage Multiple SSH Keys</title>
+      <link>https://amoghavarsha.in/blogs/multiple-ssh-keys/</link>
+      <pubDate>Tue, 12 Sep 2023 11:21:23 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/multiple-ssh-keys/</guid>
+      <description>In the previous article you learnt how to connect between two Linux machines, in this tutorial, you are going to learn how to manage more than one ssh keypair effectively.
+In your .ssh directory, create a file called config. Inside the config add the following lines:
+Host Cat HostName cat.com User amoghavarsha IdentityFile ~/.ssh/id_rsa IdentitiesOnly yes Host Dog HostName dog.com User amoghavarsha IdentityFile ~/.ssh/id_rsa.1 IdentitiesOnly yes Host * AddKeysToAgent yes IdentityFile ~/.</description>
+    </item>
+    
+    <item>
+      <title>Pair Programming With Tmux</title>
+      <link>https://amoghavarsha.in/blogs/pair-programming-with-tmux/</link>
+      <pubDate>Sun, 10 Sep 2023 02:13:56 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/pair-programming-with-tmux/</guid>
+      <description>Have you ever wondered how you can do pair programming with your friends using some simple tools?
+To achieve this, you only need two things: ssh and tmux.
+I&amp;rsquo;ve already explained about ssh in my other articles, you can go and check them out to get some basic understanding.
+If you haven&amp;rsquo;t installed tmux, you can do so by typing the following command (Works for Debian based systems):
+sudo apt install tmux On the remote server, start a new tmux session.</description>
+    </item>
+    
+    <item>
+      <title>How To Connect Between Two Linux Machines</title>
+      <link>https://amoghavarsha.in/blogs/ssh/</link>
+      <pubDate>Sun, 10 Sep 2023 02:13:53 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/ssh/</guid>
+      <description>Securely connecting two computers using SSH is fairly simple and powerful. But if you are new to the world of computers, especially GNU/Linux, it could be a bit tricky to get around some basic stuff. In this tutorial, I&amp;rsquo;m going to teach you the step-by-step process to communicate between two computers using SSH.
+Basics The idea is pretty simple. There are two Linux computers; let&amp;rsquo;s call them A and B. To access computer A from B (connecting to A using B&amp;rsquo;s machine), we need to place B&amp;rsquo;s public key inside A.</description>
+    </item>
+    
+  </channel>
+</rss>

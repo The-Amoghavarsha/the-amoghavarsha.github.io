@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scp on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/scp/</link>
+    <description>Recent content in scp on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Sep 2023 21:55:27 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/scp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get Started With Scp</title>
+      <link>https://amoghavarsha.in/blogs/scp/</link>
+      <pubDate>Sun, 17 Sep 2023 21:55:27 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/scp/</guid>
+      <description>scp is a secure way of transferring files from one computer to another. It uses ssh to transfer files, safely and securely.
+In order to transfer files from one computer to another, type the following command:
+scp /location/of/the/file username@ip_address_of_remote_computer:/location For example: scp ~/apple.png amogh@192.168.0.122:/amogh/home/Downloads If you want to send an entire folder, you can do that by using -r flag:
+scp /location/of/the/folder username@ip_address_of_remote_computer:/location For example: scp -r ~/Downloads/MyDownloads amogh@192.168.0.122:/amogh/home/ If you have multiple ssh keys, you have to specify a particular one using -i flag:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react-js on Amoghavarsha</title>
+    <link>https://amoghavarsha.in/tags/react-js/</link>
+    <description>Recent content in react-js on Amoghavarsha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Dec 2023 21:18:26 +0530</lastBuildDate><atom:link href="https://amoghavarsha.in/tags/react-js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How To Deploy React App On Github Pages</title>
+      <link>https://amoghavarsha.in/blogs/react-ghpages/</link>
+      <pubDate>Mon, 18 Dec 2023 21:18:26 +0530</pubDate>
+      
+      <guid>https://amoghavarsha.in/blogs/react-ghpages/</guid>
+      <description>GitHub Pages or gh-pages is one of the easiest ways to deploy static sites. But, did you know that you can also easily deploy a simple React app on GitHub Pages? Without any further ado, let&amp;rsquo;s get started.
+First, install gh-pages on the React app by typing:
+npm install gh-pages --save-dev Next, edit package.json by adding:
+&amp;quot;homepage&amp;quot;: &amp;quot;https://yourdomain.github.io/your-react-app&amp;quot; at the top, just after { and add a couple of lines inside &amp;ldquo;scripts&amp;rdquo; object:</description>
+    </item>
+    
+  </channel>
+</rss>
