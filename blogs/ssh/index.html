@@ -37,8 +37,7 @@ Basics The idea is pretty simple. There are two Linux computers; let&rsquo;s cal
 <meta property="article:modified_time" content="2023-09-10T02:13:53+05:30" /><meta property="og:site_name" content="Amoghavarsha" />
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How To Connect Between Two Linux Machines"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="How To Connect Between Two Linux Machines"/>
 <meta name="twitter:description" content="Securely connecting two computers using SSH is fairly simple and powerful. But if you are new to the world of computers, especially GNU/Linux, it could be a bit tricky to get around some basic stuff. In this tutorial, I&rsquo;m going to teach you the step-by-step process to communicate between two computers using SSH.
 Basics The idea is pretty simple. There are two Linux computers; let&rsquo;s call them A and B. To access computer A from B (connecting to A using B&rsquo;s machine), we need to place B&rsquo;s public key inside A."/>
 
@@ -328,11 +327,11 @@ How To Connect Between Two Linux Machines | Amoghavarsha
 </code></pre><p>If it&rsquo;s already installed. Well, that&rsquo;s good; you can proceed to the next step.
 Make sure you install them on both computers.</p>
 <p>Now create ssh keys on computer A. In order to do that, type the following command:</p>
-<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &quot;For Computer B&quot;
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &#34;For Computer B&#34;
 </code></pre><pre tabindex="0"><code>-t: Specifies the key type (RSA in this case).
 -b: Specifies the key length (4096 bits is a good choice for security).
 -C: Provides a comment for the key (usually your email address, but for our
-convenience I've written &quot;For Computer B&quot;).
+convenience I&#39;ve written &#34;For Computer B&#34;).
 </code></pre><p>And now repeat the process on computer B (i.e., generating ssh keys)</p>
 <p>The ideal place to store your ssh keys is ~/.ssh directory. If you don&rsquo;t
 have .ssh already on your home directory, you can create it by typing the
@@ -651,13 +650,13 @@ For some strange reason, my desktop …</p>
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://amoghavarsha.in" title="Amoghavarsha">
+                    <a href="https://amoghavarsha.in/" title="Amoghavarsha">
                         <img alt="Footer logo" src="/fav.jpg"
                             height="40px" width="40px">
                     </a>
                 </div>
             
-            &copy; 2025  All rights reserved
+            &copy; 2026  All rights reserved
             <div class="text-secondary">
                 Made with
                 <span class="text-danger">

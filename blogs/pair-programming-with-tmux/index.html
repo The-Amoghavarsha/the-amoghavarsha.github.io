@@ -40,8 +40,7 @@ sudo apt install tmux On the remote server, start a new tmux session." />
 <meta property="article:modified_time" content="2023-09-10T02:13:56+05:30" /><meta property="og:site_name" content="Amoghavarsha" />
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pair Programming With Tmux"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Pair Programming With Tmux"/>
 <meta name="twitter:description" content="Have you ever wondered how you can do pair programming with your friends using some simple tools?
 To achieve this, you only need two things: ssh and tmux.
 I&rsquo;ve already explained about ssh in my other articles, you can go and check them out to get some basic understanding.
@@ -334,18 +333,18 @@ out to get some basic understanding.</p>
 (Works for Debian based systems):</p>
 <pre tabindex="0"><code>sudo apt install tmux
 </code></pre><p>On the remote server, start a new tmux session. You can do this by running:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tmux
-</code></pre></div><p>This creates a new tmux session with a single terminal window.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux
+</span></span></code></pre></div><p>This creates a new tmux session with a single terminal window.</p>
 <p>Inside tmux, you can create additional terminal windows as needed. You can do this by pressing <code>Ctrl+b</code>, then typing <code>c</code>:</p>
 <pre tabindex="0"><code>Ctrl+b c
 </code></pre><p>This command creates a new window.</p>
 <p>To switch between different tmux windows, you can use <code>Ctrl+b</code> followed by a number. For example, <code>Ctrl+b 0</code> will switch to the first window, <code>Ctrl+b 1</code> to the second, and so on.</p>
 <p>On Your Local Machine, Connect to the remote server using SSH, just as you normally would</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh username@remote_server_ip
-</code></pre></div><p>Now, attach to the Tmux session.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh username@remote_server_ip
+</span></span></code></pre></div><p>Now, attach to the Tmux session.</p>
 <p>To join the tmux session that is running on the remote server, use the <code>tmux attach-session</code> command followed by the <code>-t</code> option and the session name (usually <code>0</code> for the first session, unless it&rsquo;s renamed):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tmux attach-session -t <span style="color:#ae81ff">0</span>
-</code></pre></div><p>You should now be sharing the same terminal session with your teammate on the remote server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmux attach-session -t <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>You should now be sharing the same terminal session with your teammate on the remote server.</p>
 <p>Follow me on other <strong><a href="https://amoghavarsha.in/socials/">social media</a></strong></p>
 
           </article>
@@ -618,13 +617,13 @@ For some strange reason, my desktop …</p>
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://amoghavarsha.in" title="Amoghavarsha">
+                    <a href="https://amoghavarsha.in/" title="Amoghavarsha">
                         <img alt="Footer logo" src="/fav.jpg"
                             height="40px" width="40px">
                     </a>
                 </div>
             
-            &copy; 2025  All rights reserved
+            &copy; 2026  All rights reserved
             <div class="text-secondary">
                 Made with
                 <span class="text-danger">

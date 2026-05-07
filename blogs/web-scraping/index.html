@@ -36,8 +36,7 @@
 <meta property="article:modified_time" content="2024-08-21T10:10:02+05:30" /><meta property="og:site_name" content="Amoghavarsha" />
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="An Introduction To Web Scraping"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="An Introduction To Web Scraping"/>
 <meta name="twitter:description" content="I recently started seeing a lot of posts related to illegal web scarping by AI companies, all thanks to frequency illusion. In this blog, we&rsquo;ll discuss the basics of web scraping and let&rsquo;s learn how to scrape things from the web. Legality Before jumping straight into the weeds, let&rsquo;s address the elephant in the room: &ldquo;Is it legal to scrape the web?&rdquo;. Well, it depends on who we ask this question."/>
 
 
@@ -335,98 +334,98 @@ An Introduction To Web Scraping | Amoghavarsha
 <ol>
 <li>Create - As the name suggests, we are going to CREATE something. In the language of HTTP, let us call it POST. When we POST something, it gets CREATED on the database or a server. </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts&#39;</span>
-data <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;Inception&#39;</span>,
-    <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;dream on&#39;</span>,
-    <span style="color:#e6db74">&#39;userId&#39;</span>: <span style="color:#ae81ff">1</span>
-}
-response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, json<span style="color:#f92672">=</span>data)
-
-print(<span style="color:#e6db74">&#34;Create Response:&#34;</span>)
-print(response<span style="color:#f92672">.</span>json())
-print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
-</code></pre></div><p>In the above code, we are importing <code>requests</code> and using it to post (i.e <strong>requests.post(url, json=data)</strong>) some data to the jsonplaceholder website and printing the result. Here the <code>Response code</code> indicates whether our request was successfully fulfilled or not. We are good to go if we get 200 or 201.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts&#39;</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;Inception&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;dream on&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;userId&#39;</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, json<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Create Response:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(response<span style="color:#f92672">.</span>json())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><p>In the above code, we are importing <code>requests</code> and using it to post (i.e <strong>requests.post(url, json=data)</strong>) some data to the jsonplaceholder website and printing the result. Here the <code>Response code</code> indicates whether our request was successfully fulfilled or not. We are good to go if we get 200 or 201.</p>
 <pre tabindex="0"><code>#OUTPUT
 
 Create Response:
-{'title': 'Inception', 'body': 'dream on', 'userId': 1, 'id': 101}
+{&#39;title&#39;: &#39;Inception&#39;, &#39;body&#39;: &#39;dream on&#39;, &#39;userId&#39;: 1, &#39;id&#39;: 101}
 Response code: 201
 </code></pre><ol start="2">
 <li>Read - With Read, that is technically a GET request, we can do something fancy. Let&rsquo;s retrieve our IP address and other juicy stuff about our location. </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-
-response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://ipinfo.io/&#39;</span>)
-print(<span style="color:#e6db74">&#34;Response Text:&#34;</span>, a<span style="color:#f92672">.</span>text)
-print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
-</code></pre></div><p>In the above code, from ipinfo.io we are getting information (i.e <strong>requests.get(&lsquo;<a href="http://ipinfo.io/'">http://ipinfo.io/'</a>)</strong>) about our public IP and location.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://ipinfo.io/&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Response Text:&#34;</span>, a<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><p>In the above code, from ipinfo.io we are getting information (i.e <strong>requests.get(&lsquo;<a href="http://ipinfo.io/'">http://ipinfo.io/'</a>)</strong>) about our public IP and location.</p>
 <pre tabindex="0"><code>#OUTPUT
 
 Response Text: {
-  &quot;ip&quot;: &quot;123.456.789.42&quot;,
-  &quot;city&quot;: &quot;Area 52&quot;,
-  &quot;region&quot;: &quot;Mars&quot;,
-  &quot;country&quot;: &quot;No Country For Old Men&quot;,
-  &quot;loc&quot;: &quot;370.4242,370.4242&quot;,
-  &quot;org&quot;: &quot;Orange Is The Right Spelling&quot;,
-  &quot;postal&quot;: &quot;424242&quot;,
-  &quot;timezone&quot;: &quot;Mars/dark region&quot;,
-  &quot;readme&quot;: &quot;https://ipinfo.io/missingauth&quot;
+  &#34;ip&#34;: &#34;123.456.789.42&#34;,
+  &#34;city&#34;: &#34;Area 52&#34;,
+  &#34;region&#34;: &#34;Mars&#34;,
+  &#34;country&#34;: &#34;No Country For Old Men&#34;,
+  &#34;loc&#34;: &#34;370.4242,370.4242&#34;,
+  &#34;org&#34;: &#34;Orange Is The Right Spelling&#34;,
+  &#34;postal&#34;: &#34;424242&#34;,
+  &#34;timezone&#34;: &#34;Mars/dark region&#34;,
+  &#34;readme&#34;: &#34;https://ipinfo.io/missingauth&#34;
 }
 Response code: 200
 </code></pre><ol start="3">
 <li>Update/Patch</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
-data <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;Insomnia&#39;</span>,
-    <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;No sleeep to dream&#39;</span>,
-    <span style="color:#e6db74">&#39;userId&#39;</span>: <span style="color:#ae81ff">1</span>
-}
-response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(url, json<span style="color:#f92672">=</span>data)
-
-print(<span style="color:#e6db74">&#34;Update Response:&#34;</span>)
-print(response<span style="color:#f92672">.</span>json())
-print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
-</code></pre></div><pre tabindex="0"><code>#OUTPUT
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;Insomnia&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;No sleeep to dream&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;userId&#39;</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(url, json<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Update Response:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(response<span style="color:#f92672">.</span>json())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><pre tabindex="0"><code>#OUTPUT
 
 Update Response:
-{'title': 'Insomnia', 'body': 'No sleeep to dream', 'userId': 1, 'id': 1}
+{&#39;title&#39;: &#39;Insomnia&#39;, &#39;body&#39;: &#39;No sleeep to dream&#39;, &#39;userId&#39;: 1, &#39;id&#39;: 1}
 Response code: 200
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
-data <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;Batman&#39;</span>,
-    <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;Vigilante&#39;</span>
-}
-response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>patch(url, json<span style="color:#f92672">=</span>data)
-
-print(<span style="color:#e6db74">&#34;Partial Update Response:&#34;</span>)
-print(response<span style="color:#f92672">.</span>json())
-print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
-</code></pre></div><pre tabindex="0"><code>#OUTPUT
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;Batman&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;body&#39;</span>: <span style="color:#e6db74">&#39;Vigilante&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>patch(url, json<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Partial Update Response:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(response<span style="color:#f92672">.</span>json())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Response code:&#34;</span>, response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><pre tabindex="0"><code>#OUTPUT
 
 Partial Update Response:
-{'userId': 1, 'id': 1, 'title': 'Batman', 'body': 'Vigilante'}
+{&#39;userId&#39;: 1, &#39;id&#39;: 1, &#39;title&#39;: &#39;Batman&#39;, &#39;body&#39;: &#39;Vigilante&#39;}
 Response code: 200
 </code></pre><p>In the above two code snippets, we are updating (i.e <strong>requests.put(url, json=data)</strong>)/patching(i.e <strong>requests.patch(url, json=data)</strong>) some data.</p>
 <ol start="4">
 <li>Delete</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
-response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>delete(url)
-
-print(<span style="color:#e6db74">&#34;Delete Response:&#34;</span>)
-print(response<span style="color:#f92672">.</span>status_code)
-</code></pre></div><pre tabindex="0"><code>#OUTPUT
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>delete(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Delete Response:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><pre tabindex="0"><code>#OUTPUT
 
 Delete Response:
 200
@@ -434,49 +433,48 @@ Delete Response:
 <p>If you are a curious kid, you might question, that, it&rsquo;s easy to understand how <code>get</code> works as it&rsquo;s just fetching some data from a website that is already there; what about other operations? Are we creating and deleting stuff on the website? Well, no. Jsonplaceholder simulates the behavior of an actual API.  It returns a successful response to indicate that our request was processed correctly, even though no actual changes are made to their persistent database.</p>
 <p>Now, we&rsquo;ll move on to the cool stuff. As aforementioned, web scraping is just scraping up some data associated with HTML tags. Let&rsquo;s prove that right. Copy the code below and save the file as scrape.html.</p>
 <p><em>Caution</em>: Don&rsquo;t follow the coding practice that&rsquo;s demonstrated in the code snippet below, it&rsquo;s just for the show. Using multiple <code>&lt;p&gt;</code> tags and throwing classes and <code>&lt;div&gt;</code> tags around, please no!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Web Scraping&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scrape&#34;</span>&gt;&lt;<span style="color:#f92672">span</span>&gt;This is a scrapable site&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;
-    &lt;<span style="color:#f92672">strong</span>&gt;Believe it or not&lt;/<span style="color:#f92672">strong</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;
-    Click &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://chatgpt.com&#34;</span>&gt;here&lt;/<span style="color:#f92672">a</span>&gt; to scrape the internet. &lt;<span style="color:#f92672">br</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;quote&#34;</span>&gt;Knowledge is power&lt;/<span style="color:#f92672">div</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;
-    &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">em</span>&gt;Eminem&lt;/<span style="color:#f92672">em</span>&gt; is emphasized&lt;/<span style="color:#f92672">p</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailto:lol@lol.com&#34;</span>&gt;Email&lt;/<span style="color:#f92672">a</span>&gt;   
-&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>Now for the magical stuff, we&rsquo;ll use a library named <code>Beautiful Soup</code>, for pulling data out of HTML and XML files. It can be installed by <code>pip3 install beautifulsoup4</code>. We&rsquo;ll also be using <code>lxml</code> which helps us to parse through HTML. It can be installed by <code>pip3 install lxml</code> (if it&rsquo;s not installed already). Save the file as <code>soup1.py</code>. </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> bs4
- 
-myfile <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;scrape.html&#39;</span>)
-soup <span style="color:#f92672">=</span> bs4<span style="color:#f92672">.</span>BeautifulSoup(myfile, <span style="color:#e6db74">&#34;lxml&#34;</span>)
-
-print(<span style="color:#e6db74">&#34;ChatGPT:&#34;</span>, soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>)[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;href&#39;</span>])
-print(<span style="color:#e6db74">&#34;Quote of the day:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;#quote&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
-print(<span style="color:#e6db74">&#34;Span content:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;span&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
-print(<span style="color:#e6db74">&#34;Bold content:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;strong&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
-print(<span style="color:#e6db74">&#34;Emphasized content:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;em&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
-
-email_tag <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>, href<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-
-<span style="color:#75715e"># Looping through the &lt;a&gt; tags to find the one with mailto: link</span>
-email <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-<span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>, href<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
-    <span style="color:#66d9ef">if</span> tag[<span style="color:#e6db74">&#39;href&#39;</span>]<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;mailto:&#39;</span>):
-        email <span style="color:#f92672">=</span> tag[<span style="color:#e6db74">&#39;href&#39;</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;mailto:&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
-        <span style="color:#66d9ef">break</span>
-
-<span style="color:#66d9ef">if</span> email:
-    print(<span style="color:#e6db74">&#34;Email:&#34;</span>, email)
-<span style="color:#66d9ef">else</span>:
-    print(<span style="color:#e6db74">&#34;Email not found&#34;</span>)
-
-</code></pre></div><pre tabindex="0"><code>#OUTPUT
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Web Scraping&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scrape&#34;</span>&gt;&lt;<span style="color:#f92672">span</span>&gt;This is a scrapable site&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">strong</span>&gt;Believe it or not&lt;/<span style="color:#f92672">strong</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    Click &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://chatgpt.com&#34;</span>&gt;here&lt;/<span style="color:#f92672">a</span>&gt; to scrape the internet. &lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;quote&#34;</span>&gt;Knowledge is power&lt;/<span style="color:#f92672">div</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">em</span>&gt;Eminem&lt;/<span style="color:#f92672">em</span>&gt; is emphasized&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailto:lol@lol.com&#34;</span>&gt;Email&lt;/<span style="color:#f92672">a</span>&gt;   
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>Now for the magical stuff, we&rsquo;ll use a library named <code>Beautiful Soup</code>, for pulling data out of HTML and XML files. It can be installed by <code>pip3 install beautifulsoup4</code>. We&rsquo;ll also be using <code>lxml</code> which helps us to parse through HTML. It can be installed by <code>pip3 install lxml</code> (if it&rsquo;s not installed already). Save the file as <code>soup1.py</code>. </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> bs4
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>myfile <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;scrape.html&#39;</span>)
+</span></span><span style="display:flex;"><span>soup <span style="color:#f92672">=</span> bs4<span style="color:#f92672">.</span>BeautifulSoup(myfile, <span style="color:#e6db74">&#34;lxml&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;ChatGPT:&#34;</span>, soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>)[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;href&#39;</span>])
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Quote of the day:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;#quote&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Span content:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;span&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Bold content:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;strong&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Emphasized content:&#34;</span>, soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;em&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>getText())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>email_tag <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>, href<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Looping through the &lt;a&gt; tags to find the one with mailto: link</span>
+</span></span><span style="display:flex;"><span>email <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>, href<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> tag[<span style="color:#e6db74">&#39;href&#39;</span>]<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;mailto:&#39;</span>):
+</span></span><span style="display:flex;"><span>        email <span style="color:#f92672">=</span> tag[<span style="color:#e6db74">&#39;href&#39;</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;mailto:&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> email:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Email:&#34;</span>, email)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Email not found&#34;</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>#OUTPUT
 
 ChatGPT: https://chatgpt.com
 Quote of the day: Knowledge is power
@@ -489,29 +487,28 @@ Email: lol@lol.com
 <p>Next, we subsequently find <code>#quote</code>, <code>span</code>, <code>strong</code>, <code>strong</code>, <code>em</code> elements and print their content.</p>
 <p>Finally, we grab the email by looping through the <code>&lt;a&gt;</code> tags to find the one with <code>mailto</code>, then we extract the email address by removing the <code>mailto</code> prefix. </p>
 <p>Now, let&rsquo;s move on to do something cooler. We&rsquo;ll try to download some images from the internet using a few lines of code. Cat pics dream coming true! Copy the code below and save it as <code>unsplash.py</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-<span style="color:#f92672">import</span> os
-
-search_query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cats&#39;</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://unsplash.com/s/photos/</span><span style="color:#e6db74">{</span>search_query<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>
-
-response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
-soup <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
-
-<span style="color:#75715e"># Find image URLs</span>
-image_tags <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;img&#39;</span>, {<span style="color:#e6db74">&#39;src&#39;</span>: <span style="color:#66d9ef">True</span>})
-images <span style="color:#f92672">=</span> [tag[<span style="color:#e6db74">&#39;src&#39;</span>] <span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> image_tags <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;src&#39;</span> <span style="color:#f92672">in</span> tag<span style="color:#f92672">.</span>attrs][:<span style="color:#ae81ff">5</span>]
-
-<span style="color:#75715e"># Download images</span>
-<span style="color:#66d9ef">for</span> i, img_url <span style="color:#f92672">in</span> enumerate(images, <span style="color:#ae81ff">1</span>):
-    img_data <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(img_url)<span style="color:#f92672">.</span>content
-    filename <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;IMG_</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">.jpg&#34;</span>
-    <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> f:
-        f<span style="color:#f92672">.</span>write(img_data)
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Downloaded </span><span style="color:#e6db74">{</span>filename<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>img_url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>search_query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cats&#39;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://unsplash.com/s/photos/</span><span style="color:#e6db74">{</span>search_query<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>soup <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find image URLs</span>
+</span></span><span style="display:flex;"><span>image_tags <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;img&#39;</span>, {<span style="color:#e6db74">&#39;src&#39;</span>: <span style="color:#66d9ef">True</span>})
+</span></span><span style="display:flex;"><span>images <span style="color:#f92672">=</span> [tag[<span style="color:#e6db74">&#39;src&#39;</span>] <span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> image_tags <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;src&#39;</span> <span style="color:#f92672">in</span> tag<span style="color:#f92672">.</span>attrs][:<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download images</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i, img_url <span style="color:#f92672">in</span> enumerate(images, <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    img_data <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(img_url)<span style="color:#f92672">.</span>content
+</span></span><span style="display:flex;"><span>    filename <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;IMG_</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">.jpg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(img_data)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Downloaded </span><span style="color:#e6db74">{</span>filename<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>img_url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div>
 
 
 
@@ -523,50 +520,49 @@ images <span style="color:#f92672">=</span> [tag[<span style="color:#e6db74">&#3
 <p>In the above code, we import <code>requests</code>, <code>bs4</code> and <code>os</code>. We&rsquo;ll use unsplash.com to get the images. Next, we create a <code>soup object</code> to parse the HTML content. Next, we find all <code>&lt;img&gt;</code> tags in the parsed HTML that have a <code>src</code> attribute (which usually contains the image URL). In the next line, we extract the <code>src</code> attribute from the first 5 <code>&lt;img&gt;</code> tags. We can increase the number if we want. Next, we download the image and store it with a.jpg extension using the <code>f&quot;IMG_{i}.jpg</code> format.</p>
 <p>If you don&rsquo;t want cat pictures, you can just change the <code>search_query</code> to whatever you want. And if you want to increase or decrease the number of images, change the number in <code>images = [tag['src'] for tag in image_tags if 'src' in tag.attrs][:5]</code> to any number you want.</p>
 <p>Finally, we&rsquo;ll wrap this up by getting some details about restaurants in Bali (or any other major city you want) from the Yellow Pages. Save the file as <code>yellow.py</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-<span style="color:#f92672">import</span> urllib.request
-<span style="color:#f92672">import</span> urllib.error
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.request
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.error
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Location and what to find</span>
+</span></span><span style="display:flex;"><span>location <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bali&#34;</span>
+</span></span><span style="display:flex;"><span>search_query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;restaurants&#34;</span>
+</span></span><span style="display:flex;"><span>search_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://www.yellowpages.com/search?search_terms=</span><span style="color:#e6db74">{</span>search_query<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;geo_location_terms=</span><span style="color:#e6db74">{</span>location<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;%20&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Function to fetch HTML content with error handling</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_html</span>(url):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        req <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(url, headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0&#39;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(req) <span style="color:#66d9ef">as</span> response:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>HTTPError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;HTTPError: </span><span style="color:#e6db74">{</span>e<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>e<span style="color:#f92672">.</span>reason<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>URLError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URLError: </span><span style="color:#e6db74">{</span>e<span style="color:#f92672">.</span>reason<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Unexpected error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetching the search page</span>
+</span></span><span style="display:flex;"><span>s_html <span style="color:#f92672">=</span> fetch_html(search_url)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> s_html:
+</span></span><span style="display:flex;"><span>    soup <span style="color:#f92672">=</span> BeautifulSoup(s_html, <span style="color:#e6db74">&#34;lxml&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extracting business listings</span>
+</span></span><span style="display:flex;"><span>    businesses <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;result&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> business <span style="color:#f92672">in</span> businesses:
+</span></span><span style="display:flex;"><span>        name <span style="color:#f92672">=</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;business-name&#39;</span>)<span style="color:#f92672">.</span>get_text(strip<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">if</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;business-name&#39;</span>) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        address <span style="color:#f92672">=</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;street-address&#39;</span>)<span style="color:#f92672">.</span>get_text(strip<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">if</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;street-address&#39;</span>) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        phone <span style="color:#f92672">=</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;phones phone primary&#39;</span>)<span style="color:#f92672">.</span>get_text(strip<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">if</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;phones phone primary&#39;</span>) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Print the extracted information</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Name: </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Address: </span><span style="color:#e6db74">{</span>address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Phone: </span><span style="color:#e6db74">{</span>phone<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;-------------------&#34;</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>#OUTPUT
 
-<span style="color:#75715e"># Location and what to find</span>
-location <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bali&#34;</span>
-search_query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;restaurants&#34;</span>
-search_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://www.yellowpages.com/search?search_terms=</span><span style="color:#e6db74">{</span>search_query<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;geo_location_terms=</span><span style="color:#e6db74">{</span>location<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;%20&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-
-<span style="color:#75715e"># Function to fetch HTML content with error handling</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_html</span>(url):
-    <span style="color:#66d9ef">try</span>:
-        req <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(url, headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0&#39;</span>})
-        <span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(req) <span style="color:#66d9ef">as</span> response:
-            <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>read()
-    <span style="color:#66d9ef">except</span> urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>HTTPError <span style="color:#66d9ef">as</span> e:
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;HTTPError: </span><span style="color:#e6db74">{</span>e<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>e<span style="color:#f92672">.</span>reason<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-    <span style="color:#66d9ef">except</span> urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>URLError <span style="color:#66d9ef">as</span> e:
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URLError: </span><span style="color:#e6db74">{</span>e<span style="color:#f92672">.</span>reason<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Unexpected error: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-
-<span style="color:#75715e"># Fetching the search page</span>
-s_html <span style="color:#f92672">=</span> fetch_html(search_url)
-<span style="color:#66d9ef">if</span> s_html:
-    soup <span style="color:#f92672">=</span> BeautifulSoup(s_html, <span style="color:#e6db74">&#34;lxml&#34;</span>)
-
-    <span style="color:#75715e"># Extracting business listings</span>
-    businesses <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;result&#39;</span>)
-
-    <span style="color:#66d9ef">for</span> business <span style="color:#f92672">in</span> businesses:
-        name <span style="color:#f92672">=</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;business-name&#39;</span>)<span style="color:#f92672">.</span>get_text(strip<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">if</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;business-name&#39;</span>) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
-        address <span style="color:#f92672">=</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;street-address&#39;</span>)<span style="color:#f92672">.</span>get_text(strip<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">if</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;street-address&#39;</span>) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
-        phone <span style="color:#f92672">=</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;phones phone primary&#39;</span>)<span style="color:#f92672">.</span>get_text(strip<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">if</span> business<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;phones phone primary&#39;</span>) <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
-
-        <span style="color:#75715e"># Print the extracted information</span>
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Name: </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Address: </span><span style="color:#e6db74">{</span>address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Phone: </span><span style="color:#e6db74">{</span>phone<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        print(<span style="color:#e6db74">&#34;-------------------&#34;</span>)
-
-</code></pre></div><pre tabindex="0"><code>#OUTPUT
-
-Name: Bj's Pizza House
+Name: Bj&#39;s Pizza House
 Address: 6301 Monroe Hwy
 Phone: (318) 640-2983
 -------------------
@@ -861,13 +857,13 @@ For some strange reason, my desktop …</p>
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://amoghavarsha.in" title="Amoghavarsha">
+                    <a href="https://amoghavarsha.in/" title="Amoghavarsha">
                         <img alt="Footer logo" src="/fav.jpg"
                             height="40px" width="40px">
                     </a>
                 </div>
             
-            &copy; 2025  All rights reserved
+            &copy; 2026  All rights reserved
             <div class="text-secondary">
                 Made with
                 <span class="text-danger">
